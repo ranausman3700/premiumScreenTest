@@ -5,88 +5,274 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A6FFFFFF"
+    android:background="@color/offWhite"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMonthly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="6dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cardYearly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/txtPtlanMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:text="Monthly"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtPercentageMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="save 33 %"
+                android:paddingHorizontal="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/saving_percentage"
+                android:backgroundTint="@color/deepPink"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/txtPtlanMonth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/txtCurrencyMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=" PKR"
+                android:textColor="@color/deepPink"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtRupeesMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@+id/txtCurrencyMonth"
+                android:text="890"
+                android:textColor="@color/deepPink"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toLeftOf="@+id/txtCurrencyMonth"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCurrency2Month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:text=" PKR"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txtRupees2Month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@+id/txtCurrencyMonth"
+                android:text="1183"
+
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtCurrencyMonth"
+                app:layout_constraintRight_toLeftOf="@+id/txtCurrency2Month"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:dividerColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRupees2Month"
+                app:layout_constraintEnd_toEndOf="@+id/txtCurrency2Month"
+                app:layout_constraintStart_toStartOf="@+id/txtRupees2Month"
+                app:layout_constraintTop_toTopOf="@+id/txtRupees2Month"
+                app:layout_constraintVertical_bias="0.58000004" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardYearly"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
-        android:elevation="2dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSubscribe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_marginBottom="20dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="12dp"
+        android:background="@color/white"
 
-        <RelativeLayout
-            android:id="@+id/relativeyearly"
-            android:layout_width="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_height="wrap_content">
+        app:layout_constraintBottom_toTopOf="@+id/buttonSubscribe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintYearly"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stroke_premium"
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/txtPtlanYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
                 android:text="Yearly"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:layout_alignParentTop="true"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
                 android:id="@+id/txtPercentageYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtPtlanYear"
-                android:text="save 50%"
+                android:layout_marginBottom="12dp"
+                android:text="save 50 %"
+                android:paddingHorizontal="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/saving_percentage"
+                android:backgroundTint="@color/deepPink"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/txtPtlanYear"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/txtCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=" PKR"
+                android:textColor="@color/deepPink"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtPkr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PKR"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtRupees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@+id/txtCurrency"
+                android:text="8800"
+                android:textColor="@color/deepPink"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toLeftOf="@+id/txtCurrency"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCurrency2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:text=" PKR"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txtRupees2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@+id/txtCurrency"
+                android:text="12760"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtCurrency"
+                app:layout_constraintRight_toLeftOf="@+id/txtCurrency2"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:dividerColor="@color/black"
+
+                app:layout_constraintBottom_toBottomOf="@+id/txtRupees2"
+                app:layout_constraintEnd_toEndOf="@+id/txtCurrency2"
+                app:layout_constraintStart_toStartOf="@+id/txtRupees2"
+                app:layout_constraintTop_toTopOf="@+id/txtRupees2"
+                app:layout_constraintVertical_bias="0.58000004" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSubscribe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:background="@drawable/ic_button_background"
         android:backgroundTint="@color/deepPink"
         android:gravity="center"
         android:minWidth="100dp"
-        android:paddingHorizontal="55dp"
+        android:paddingHorizontal="70dp"
         android:paddingVertical="6dp"
         android:text="Subscribe"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/noCommentTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintBottom_toTopOf="@+id/cancelNote"
+        app:layout_constraintStart_toStartOf="@+id/cancelNote" />
 
     <TextView
-        android:id="@+id/noCommentTV"
+        android:id="@+id/cancelNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="10dp"
         android:paddingHorizontal="30dp"
         android:paddingVertical="8dp"
         android:text="No commitment, Cancel any time"
         android:textColor="@color/grey"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
